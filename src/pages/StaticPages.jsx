@@ -1,6 +1,5 @@
-import { useState } from 'react'
-import { Compass, Users, Heart, Target, Mail, Phone, MapPin, Globe } from 'lucide-react'
-import { Btn, Card, IconBox } from '../components/ui.jsx'
+import { Compass, Users, Heart, Target } from 'lucide-react'
+import { Card, IconBox } from '../components/ui.jsx'
 
 // ── AboutPage ─────────────────────────────────────────────────────────────────
 export function AboutPage() {
@@ -93,73 +92,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-    </div>
-  )
-}
-
-// ── ContactPage ───────────────────────────────────────────────────────────────
-export function ContactPage({ showToast }) {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [msg, setMsg] = useState('')
-
-  const contactInfo = [
-    { icon: Mail, label: 'support@motonomaad.com' },
-    { icon: Phone, label: '+91 98765 43210' },
-    { icon: MapPin, label: 'Bangalore, Karnataka, India' },
-    { icon: Globe, label: 'motonomaad.com' },
-  ]
-
-  return (
-    <div className="container mx-auto px-8 max-w-[1400px] py-12">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="font-heading text-4xl md:text-5xl mb-2">Contact Us</h1>
-        <p className="text-[#8a8078] mb-10">Get in touch with the Motonomaad team</p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <Card className="p-6 mb-6">
-              <h2 className="font-heading text-lg mb-4">Get in Touch</h2>
-              <div className="space-y-4">
-                {contactInfo.map((c, i) => (
-                  <div key={i} className="flex items-center gap-3 text-[#8a8078] text-sm">
-                    <c.icon size={16} className="text-[#e8611a] flex-shrink-0" />
-                    {c.label}
-                  </div>
-                ))}
-              </div>
-            </Card>
-            <Card className="p-6">
-              <h2 className="font-heading text-lg mb-2">Business Hours</h2>
-              <p className="text-[#8a8078] text-sm leading-relaxed">Monday–Friday: 9AM–6PM IST<br />Saturday: 10AM–4PM IST<br />Sunday: Closed</p>
-            </Card>
-          </div>
-
-          <Card className="p-6">
-            <h2 className="font-heading text-lg mb-6">Send a Message</h2>
-            <div className="space-y-4">
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-[#8a8078] uppercase tracking-wider">Name</label>
-                <input className="moto-input" placeholder="Your name" value={name} onChange={e => setName(e.target.value)} />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-[#8a8078] uppercase tracking-wider">Email</label>
-                <input className="moto-input" type="email" placeholder="you@example.com" value={email} onChange={e => setEmail(e.target.value)} />
-              </div>
-              <div className="flex flex-col gap-1.5">
-                <label className="text-xs font-semibold text-[#8a8078] uppercase tracking-wider">Message</label>
-                <textarea className="moto-input" placeholder="How can we help?" value={msg} onChange={e => setMsg(e.target.value)} />
-              </div>
-              <Btn className="w-full justify-center" onClick={() => {
-                showToast('Message sent! We\'ll get back to you soon.')
-                setName(''); setEmail(''); setMsg('')
-              }}>
-                Send Message
-              </Btn>
-            </div>
-          </Card>
-        </div>
-      </div>
     </div>
   )
 }

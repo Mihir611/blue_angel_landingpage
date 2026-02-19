@@ -1,12 +1,16 @@
 {
   "name": "motonomaad",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    
+    "analyze": "vite build --mode analyze",
+    "audit": "yarn audit",
+    "audit:fix": "yarn audit --fix"
   },
   "dependencies": {
     "axios": "^1.13.5",
@@ -20,7 +24,10 @@
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.41",
+    "rollup-plugin-visualizer": "^6.0.5",
     "tailwindcss": "^3.4.10",
-    "vite": "^5.4.2"
+    "terser": "^5.46.0",
+    "vite": "^5.4.2",
+    "vite-plugin-compression": "^0.5.1"
   }
 }

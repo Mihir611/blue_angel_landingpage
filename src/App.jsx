@@ -5,10 +5,11 @@ import LandingPage from './pages/LandingPage.jsx'
 import TripPlannerPage from './pages/TripPlannerPage.jsx'
 import MechanicsPage from './pages/MechanicsPage.jsx'
 import { GroupsPage, SocialFeedPage } from './pages/CommunityPages.jsx'
-import { AboutPage, ContactPage, PrivacyPage } from './pages/StaticPages.jsx'
+import { AboutPage, PrivacyPage } from './pages/StaticPages.jsx'
 import { EventsPage } from './pages/EventsPage.jsx'
 import AppDownloadPage from './pages/Download.jsx'
 import BlogPage from './pages/Blogpage.jsx'
+import { ContactPage } from './pages/Contact.jsx'
 
 export default function App() {
   const [page, setPage] = useState('home')
