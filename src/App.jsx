@@ -4,9 +4,11 @@ import { Toast } from './components/ui.jsx'
 import LandingPage from './pages/LandingPage.jsx'
 import TripPlannerPage from './pages/TripPlannerPage.jsx'
 import MechanicsPage from './pages/MechanicsPage.jsx'
-import { EventsPage, GroupsPage, SocialFeedPage } from './pages/CommunityPages.jsx'
+import { GroupsPage, SocialFeedPage } from './pages/CommunityPages.jsx'
 import { AboutPage, ContactPage, PrivacyPage } from './pages/StaticPages.jsx'
+import { EventsPage } from './pages/EventsPage.jsx'
 import AppDownloadPage from './pages/Download.jsx'
+import BlogPage from './pages/Blogpage.jsx'
 
 export default function App() {
   const [page, setPage] = useState('home')
@@ -34,6 +36,7 @@ export default function App() {
       case 'contact':      return <ContactPage showToast={showToast} />
       case 'privacy':      return <PrivacyPage />
       case 'download':     return <AppDownloadPage />
+      case 'blog':         return <BlogPage showToast={showToast} navigate={navigate} />
       default:             return <LandingPage navigate={navigate} />
     }
   }

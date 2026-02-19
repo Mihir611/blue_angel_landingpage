@@ -50,6 +50,141 @@ export const FAQS = [
   { q: 'Can I use Motonomaad on mobile?', a: 'Absolutely! Motonomaad is fully responsive and works seamlessly on smartphones, tablets, and desktops. Access your trip plans, connect with riders, and find mechanics wherever your journey takes you.' },
 ]
 
+export const BLOG_ARTICLES = [
+  {
+    id: 1,
+    title: "BMW 2 Series Gran Coupe Review",
+    excerpt: "After a long wait, BMW has finally released the new 2 Series Gran Coupe. The cheapest sedan in BMW's sporty portfolio in India with petrol and diesel options.",
+    image: "/blog-bmw-2series.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 15, 2024",
+    readTime: "8 min read",
+    category: "Reviews",
+    tags: ["BMW", "Sedan", "Review"],
+    featured: true,
+    mdFile: "/blog/bmw-2-series-grancoupe.md"
+  },
+  {
+    id: 2,
+    title: "Maruti Suzuki Fronx Review",
+    excerpt: "The Maruti Suzuki Fronx blends coupe-inspired styling with practicality. Here’s a detailed look at its design, features, performance, and overall driving experience.",
+    image: "https://images.unsplash.com/photo-1619767886558-efdc7d90f9a8?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 18, 2024",
+    readTime: "7 min read",
+    category: "Reviews",
+    tags: ["Maruti Suzuki", "Fronx", "Review"],
+    featured: false,
+    mdFile: "/blog/fronx.md"
+  },
+  {
+    id: 3,
+    title: "Lamborghini Urus Review",
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 20, 2024",
+    readTime: "9 min read",
+    category: "Reviews",
+    tags: ["Lamborghini", "Urus", "Super SUV"],
+    featured: true,
+    mdFile: "/blog/lamborghini-urus.md"
+  },
+  {
+    id: 4,
+    title: "Mercedes-Benz G63 AMG Review",
+    image: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6b9?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 22, 2024",
+    readTime: "8 min read",
+    category: "Reviews",
+    tags: ["Mercedes-Benz", "G63 AMG", "SUV"],
+    featured: false,
+    mdFile: "/blog/mercedes-benz-g63-amg.md"
+  },
+  {
+    id: 5,
+    title: "MG Comet EV Review",
+    image: "https://images.unsplash.com/photo-1593941707882-a5bac6861d75?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1549924231-f129b911e442?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 24, 2024",
+    readTime: "6 min read",
+    category: "Reviews",
+    tags: ["MG", "Comet EV", "Electric"],
+    featured: false,
+    mdFile: "/blog/mg-comet-ev.md"
+  },
+  {
+    id: 6,
+    title: "Skoda Superb Review",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 26, 2024",
+    readTime: "8 min read",
+    category: "Reviews",
+    tags: ["Skoda", "Superb", "Sedan"],
+    featured: false,
+    mdFile: "/blog/skoda-superb.md"
+  },
+  {
+    id: 7,
+    title: "BMW X3 Review",
+    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80",
+    author: "Auto Expert",
+    date: "Feb 28, 2024",
+    readTime: "8 min read",
+    category: "Reviews",
+    tags: ["BMW", "X3", "SUV"],
+    featured: false,
+    mdFile: "/blog/the-bmw-x3.md"
+  },
+  {
+    id: 8,
+    title: "Audi Q7 Review",
+    image: "https://images.unsplash.com/photo-1619767886558-efdc7d90f9a8?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+    author: "Auto Expert",
+    date: "Mar 2, 2024",
+    readTime: "9 min read",
+    category: "Reviews",
+    tags: ["Audi", "Q7", "Luxury SUV"],
+    featured: true,
+    mdFile: "/blog/the-new-audi-q7.md"
+  },
+  {
+    id: 9,
+    title: "Ford Mustang Review",
+    image: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+    author: "Auto Expert",
+    date: "Mar 4, 2024",
+    readTime: "8 min read",
+    category: "Reviews",
+    tags: ["Ford", "Mustang", "Muscle Car"],
+    featured: true,
+    mdFile: "/blog/the-new-ford-mustang.md"
+  },
+  {
+    id: 10,
+    title: "Jaguar F-Pace Review",
+    image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=1200&q=80",
+    fallbackImage: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
+    author: "Auto Expert",
+    date: "Mar 6, 2024",
+    readTime: "7 min read",
+    category: "Reviews",
+    tags: ["Jaguar", "F-Pace", "SUV"],
+    featured: false,
+    mdFile: "/blog/the-new-jaguar-f.md"
+  }
+]
+
 export const TRIP_SUGGESTIONS = {
   scenic: [
     { title: 'Golden Ghats Circuit', duration: 'Day 1-2: Bangalore → Mysuru → Coorg. Day 3: Coorg → Mangalore. Day 4-5: Coastal NH66 → Goa.', highlights: ['Abbey Falls', 'Dubare Elephant Camp', 'Kudle Beach'], distance: '820 km' },
@@ -69,6 +204,7 @@ export const APP_LINKS = [
   { id: 'social', label: 'Social' },
   { id: 'groups', label: 'Groups' },
   { id: 'events', label: 'Events' },
+  { id: 'blog', label: 'Blog' },
 ]
 
 export const COMPANY_LINKS = [

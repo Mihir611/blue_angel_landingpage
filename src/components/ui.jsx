@@ -53,7 +53,7 @@ export function BrandLogo({ onClick }) {
     <div onClick={onClick} className="flex items-center gap-3 cursor-pointer select-none group">
       <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#e8611a] to-[#c0392b] flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
         <img 
-          src="/assets/logo.jpg" 
+          src="/assets/logo.png" 
           alt="Motonomaad Logo" 
           className="w-full h-full object-cover"
         />

@@ -79,7 +79,7 @@ export default function AppShell({ children, page, navigate, showToast }) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <Btn
               variant="primary"
               size="sm"
@@ -96,7 +96,7 @@ export default function AppShell({ children, page, navigate, showToast }) {
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </span>
             </button>
-          </div>
+          </div> */}
         </div>
       </header>
 
