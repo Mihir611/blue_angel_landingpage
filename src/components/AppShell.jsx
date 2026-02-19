@@ -116,7 +116,7 @@ export default function AppShell({ children, page, navigate, showToast }) {
               <ChevronRight size={16} className="text-[#8a8078]" />
             </div>
           ))}
-          <div className="pt-4">
+          {/* <div className="pt-4">
             <Btn
               variant="primary"
               className="w-full btn-glow"
@@ -124,7 +124,7 @@ export default function AppShell({ children, page, navigate, showToast }) {
             >
               <Shield size={15} /> Sign In
             </Btn>
-          </div>
+          </div> */}
         </div>
       )}
 
