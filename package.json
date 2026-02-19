@@ -1,13 +1,13 @@
 {
   "name": "motonomaad",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    
+
     "analyze": "vite build --mode analyze",
     "audit": "yarn audit",
     "audit:fix": "yarn audit --fix"
