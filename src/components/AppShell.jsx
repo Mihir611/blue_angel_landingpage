@@ -79,15 +79,15 @@ export default function AppShell({ children, page, navigate, showToast }) {
             ))}
           </nav>
 
-          {/* <div className="flex items-center gap-3">
-            <Btn
+          <div className="flex items-center gap-3">
+            {/* <Btn
               variant="primary"
               size="sm"
               className="hidden lg:inline-flex btn-glow"
               onClick={() => showToast('Auth integration coming soon!')}
             >
               <Shield size={14} /> Sign In
-            </Btn>
+            </Btn> */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="lg:hidden p-2 rounded-lg text-[#8a8078] hover:text-[#f0ebe3] hover:bg-[#1a1a1a] transition-all duration-200 active:scale-90"
@@ -96,7 +96,7 @@ export default function AppShell({ children, page, navigate, showToast }) {
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
               </span>
             </button>
-          </div> */}
+          </div>
         </div>
       </header>
 
