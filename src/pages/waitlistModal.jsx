@@ -9,10 +9,11 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const set = (k, v) => setForm(f => ({ ...f, [k]: v }))
 
     const handleSubmit = async () => {
+        let title = "App Launch";
         if (!form.email) return
         setStatus('loading')
         try {
-            await JoinWaitlist(form.email, form.firstName, form.lastName, form.phone, form.riderType)
+            await JoinWaitlist(title, form.email, form.firstName, form.lastName, form.phone, form.riderType)
             setStatus('success');
         } catch {
             setStatus('error');

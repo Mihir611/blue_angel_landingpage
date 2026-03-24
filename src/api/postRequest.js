@@ -10,9 +10,10 @@ const configInterface = {
     data: {}
 }
 
-export const JoinWaitlist = async (userEmail, firstName, lastName, phone, riderType) => {
+export const JoinWaitlist = async (title, userEmail, firstName, lastName, phone, riderType) => {
     configInterface.url = process.env.VITE_API_URL + `/api/waitlist/join`
     configInterface.data = {
+        title: title,
         userEmail: userEmail,
         name: firstName + lastName,
         contactNumber: phone,
