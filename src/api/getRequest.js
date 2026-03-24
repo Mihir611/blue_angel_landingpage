@@ -9,9 +9,9 @@ const configInterface = {
     }
 }
 
-export const GetLandingEvents = () => {
+export const GetLandingEvents = async () => {
     configInterface.url = import.meta.env.VITE_API_URL + '/api/landing/landingEvents';
 
-    let res = RequestData(configInterface);
+    let res = await RequestData(configInterface);
     return res;
 }

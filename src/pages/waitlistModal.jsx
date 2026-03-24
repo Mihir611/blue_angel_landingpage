@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
+import { JoinWaitlist } from '../api/postRequest'
 
 export default function WaitlistModal({ isOpen, onClose }) {
     const [form, setForm] = useState({ firstName: '', lastName: '', email: '', phone: '', riderType: '' })
@@ -11,15 +12,10 @@ export default function WaitlistModal({ isOpen, onClose }) {
         if (!form.email) return
         setStatus('loading')
         try {
-            const res = await fetch('/api/waitlist', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(form),
-            })
-            if (!res.ok) throw new Error()
-            setStatus('success')
+            await JoinWaitlist(form.email, form.firstName, form.lastName, form.phone, form.riderType)
+            setStatus('success');
         } catch {
-            setStatus('error')
+            setStatus('error');
         }
     }
 

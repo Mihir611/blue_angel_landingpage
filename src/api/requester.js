@@ -1,9 +1,6 @@
 import Axios from "axios";
 
-export const RequestData = (configuration) => {
-    Axios.request(configuration).then((response) => {
-        return response.data;
-    }).catch((error) => {
-        throw error;
-    })
+export const RequestData = async (configuration) => {
+    const response = await Axios.request(configuration);
+    return response.data;
 }
