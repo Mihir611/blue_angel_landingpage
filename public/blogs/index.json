@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Royal Enfield Himalayan 450 Review",
+    "excerpt": "The Sherpa engine is here. We take the new Himalayan through 2,000km of broken roads to see if it's the ultimate ADV.",
+    "author": "Mihir",
+    "date": "Feb 10, 2026",
+    "readTime": "5 min read",
+    "category": "Reviews",
+    "tags": ["Adventure", "Royal Enfield", "Off-roading"],
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64",
+    "fallbackImage": "/images/himalayan-fallback.jpg",
+    "mdFile": "/blogs/himalayan-450-review.md"
+  },
+  {
+    "id": 2,
+    "title": "Triumph Speed 400 Review",
+    "excerpt": "British sophistication meets Indian roads. Does the smallest Triumph deliver the 'Big Bike' experience?",
+    "author": "Mihir",
+    "date": "Feb 22, 2026",
+    "readTime": "5 min read",
+    "category": "Reviews",
+    "tags": ["Roadster", "Triumph", "City Riding"],
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1610647752706-3bb12232b3ab",
+    "fallbackImage": "/images/speed400-fallback.jpg",
+    "mdFile": "/blogs/triumph-speed-400-review.md"
+  },
+  {
+    "id": 3,
+    "title": "The Spiti Valley Expedition",
+    "excerpt": "A survival guide to the 'Middle Land'. 1,000km of moonscapes, high-altitude passes, and frozen rivers.",
+    "author": "Mihir",
+    "date": "Mar 05, 2026",
+    "readTime": "8 min read",
+    "category": "Travel Stories",
+    "tags": ["Himalayas", "Spiti", "Adventure"],
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23",
+    "fallbackImage": "/images/spiti-fallback.jpg",
+    "mdFile": "/blogs/travel-spiti-circuit.md"
+  },
+  {
+    "id": 4,
+    "title": "The West Coast Run: NH66",
+    "excerpt": "Chasing sunsets on the Maravanthe beach road. Why the NH66 is the most therapeutic ride in India.",
+    "author": "Mihir",
+    "date": "Mar 18, 2026",
+    "readTime": "6 min read",
+    "category": "Travel Stories",
+    "tags": ["Coastal", "NH66", "Road Trip"],
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1506461883276-594a12b11cf3",
+    "fallbackImage": "/images/coastal-fallback.jpg",
+    "mdFile": "/blogs/travel-coastal-nh66.md"
+  }
+]

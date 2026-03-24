@@ -9,11 +9,15 @@ import { AboutPage, PrivacyPage } from './pages/StaticPages.jsx'
 import { EventsPage } from './pages/EventsPage.jsx'
 import AppDownloadPage from './pages/Download.jsx'
 import BlogPage from './pages/Blogpage.jsx'
+import LaunchCountdown from './pages/launchCountdown.jsx'
+import WaitlistModal from './pages/waitlistModal.jsx'
+import { useWaitlist } from './hooks/useWaitlist.js'
 import { ContactPage } from './pages/Contact.jsx'
 
 export default function App() {
   const [page, setPage] = useState('home')
   const [toast, setToast] = useState(null)
+  const waitlist = useWaitlist();
 
   const navigate = (p) => {
     setPage(p)
@@ -27,25 +31,29 @@ export default function App() {
 
   const renderPage = () => {
     switch (page) {
-      case 'home':         return <LandingPage navigate={navigate} />
-      case 'trip-planner': return <TripPlannerPage showToast={showToast}  navigate={navigate} />
-      case 'mechanics':    return <MechanicsPage showToast={showToast} />
-      case 'social':       return <SocialFeedPage showToast={showToast} />
-      case 'groups':       return <GroupsPage showToast={showToast} />
-      case 'events':       return <EventsPage showToast={showToast} />
-      case 'about':        return <AboutPage />
-      case 'contact':      return <ContactPage showToast={showToast} />
-      case 'privacy':      return <PrivacyPage />
-      case 'download':     return <AppDownloadPage />
-      case 'blog':         return <BlogPage showToast={showToast} navigate={navigate} />
-      default:             return <LandingPage navigate={navigate} />
+      case 'home': return <LandingPage navigate={navigate} openWaitlist={waitlist.open} />
+      case 'trip-planner': return <TripPlannerPage showToast={showToast} navigate={navigate} />
+      case 'mechanics': return <MechanicsPage showToast={showToast} />
+      case 'social': return <SocialFeedPage showToast={showToast} />
+      case 'groups': return <GroupsPage showToast={showToast} />
+      case 'events': return <EventsPage showToast={showToast} />
+      case 'about': return <AboutPage />
+      case 'contact': return <ContactPage showToast={showToast} />
+      case 'privacy': return <PrivacyPage />
+      case 'download': return <AppDownloadPage />
+      case 'blog': return <BlogPage showToast={showToast} navigate={navigate} />
+      default: return <LandingPage navigate={navigate} openWaitlist={waitlist.open} />
     }
   }
 
   return (
-    <AppShell page={page} navigate={navigate} showToast={showToast}>
-      {renderPage()}
-      {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
-    </AppShell>
+    <>
+      <LaunchCountdown onJoinClick={waitlist.open} />
+      <AppShell page={page} navigate={navigate} showToast={showToast}>
+        {renderPage()}
+        {toast && <Toast msg={toast} onClose={() => setToast(null)} />}
+      </AppShell>
+      <WaitlistModal isOpen={waitlist.isOpen} onClose={waitlist.close} />
+    </>
   )
 }

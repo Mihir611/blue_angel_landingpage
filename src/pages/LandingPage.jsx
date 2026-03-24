@@ -24,7 +24,6 @@ const FEATURE_ICONS = {
 
 const TAGLINES = ['Ride Free.', 'Ride Far.', 'Ride Together.', 'Ride Wild.']
 
-// Floating background particles
 function Particles() {
   const dots = [
     { size: 4, x: '12%', y: '20%', dur: '5s', delay: '0s' },
@@ -51,7 +50,6 @@ function Particles() {
   )
 }
 
-// Animated road SVG
 function RoadSVG() {
   const ref = useScrollReveal()
   return (
@@ -82,7 +80,7 @@ function RoadSVG() {
   )
 }
 
-export default function LandingPage({ navigate }) {
+export default function LandingPage({ navigate, openWaitlist }) {
   const tagline = useTypewriter(TAGLINES, 80, 1600)
   const featuresRef = useScrollReveal()
   const stepsRef = useScrollReveal()
@@ -106,7 +104,6 @@ export default function LandingPage({ navigate }) {
                 Ride. Wander. Repeat.
               </p>
 
-              {/* Staggered headline */}
               <h1 className="font-heading hero-headline-size leading-[0.9] tracking-tight mb-6">
                 <span className="block overflow-hidden">
                   <span className="block animate-char-reveal" style={{ animationDelay: '0.05s' }}>RIDE</span>
@@ -119,7 +116,6 @@ export default function LandingPage({ navigate }) {
                 </span>
               </h1>
 
-              {/* Typewriter tagline */}
               <div className="h-8 mb-6 animate-fade-up-3">
                 <span className="text-[#e8611a] font-display text-2xl tracking-wider">
                   {tagline}<span className="animate-pulse">|</span>
@@ -130,9 +126,18 @@ export default function LandingPage({ navigate }) {
                 Plan epic routes, connect with certified mechanics, and join a tribe of riders who live for the open road.
               </p>
 
+              {/* ── Launch badge ── */}
+              <div className="flex items-center gap-2 mb-4 animate-fade-up-3">
+                <span className="w-2 h-2 rounded-full bg-[#e8611a] animate-pulse flex-shrink-0" />
+                <span className="text-xs font-bold tracking-[0.15em] uppercase text-[#e8611a]">
+                  Launching April 14, 2026 — Platform + App
+                </span>
+              </div>
+
+              {/* ── CTA buttons — waitlist is primary ── */}
               <div className="flex flex-col sm:flex-row gap-4 animate-fade-up-4">
-                <Btn size="lg" className="btn-glow" onClick={() => navigate('trip-planner')}>
-                  Plan Your Trip <ArrowRight size={16} className="animate-bounce-x" />
+                <Btn size="lg" className="btn-glow" onClick={openWaitlist}>
+                  Join the Waitlist <ArrowRight size={16} className="animate-bounce-x" />
                 </Btn>
                 <Btn size="lg" variant="outline" onClick={() => navigate('about')}>
                   Learn More
@@ -150,25 +155,21 @@ export default function LandingPage({ navigate }) {
               </div>
             </div>
 
-            {/* Right — hero card with animated border */}
+            {/* Right — hero card */}
             <div className="animate-slide-in-right relative">
               <div className="animated-border animate-pulse-glow">
                 <div className="animated-border-inner">
-                  {/* Animated bike SVG */}
                   <div className="flex flex-col items-center justify-center gap-6 py-4">
                     <div className="relative">
-                      {/* Outer spinning ring */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-32 h-32 rounded-full border border-[rgba(232,97,26,0.15)] animate-spin-slow" />
                       </div>
-                      {/* Inner counter-spinning ring */}
                       <div className="absolute inset-0 flex items-center justify-center">
                         <div className="w-20 h-20 rounded-full border border-dashed border-[rgba(232,97,26,0.2)] animate-counter-spin" />
                       </div>
-                      {/* Bike icon */}
-                      <div className="w-64 h-64 flex items-center justify-center relative z-10 animate-float">
+                      <div className="w-128 h-128 flex items-center justify-center relative z-10 animate-float">
                         <img
-                          src="/assets/Untitled7.png"
+                          src="/assets/brandMark.png"
                           alt="Motonomaad Logo"
                           className="w-full h-full object-cover"
                         />
@@ -177,10 +178,20 @@ export default function LandingPage({ navigate }) {
 
                     <div className="text-center">
                       <div className="shimmer-text font-heading text-2xl mb-1">YOUR ADVENTURE AWAITS</div>
-                      <p className="text-[#8a8078] text-sm">Plan. Ride. Repeat.</p>
+                      <p className="text-[#8a8078] text-sm">Plan. Connect. Protect. Sustain</p>
                     </div>
 
-                    {/* Animated progress dots */}
+                    {/* Waitlist nudge inside hero card */}
+                    <button
+                      onClick={openWaitlist}
+                      className="flex items-center gap-2 bg-[rgba(232,97,26,0.1)] border border-[rgba(232,97,26,0.25)] hover:border-[rgba(232,97,26,0.5)] hover:bg-[rgba(232,97,26,0.15)] transition-all duration-200 rounded-full px-4 py-2 cursor-pointer"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#e8611a] animate-pulse" />
+                      <span className="text-[11px] font-bold tracking-[0.12em] uppercase text-[#e8611a]">
+                        Get early access
+                      </span>
+                    </button>
+
                     <div className="flex gap-2">
                       {[0, 1, 2, 3, 4].map(i => (
                         <div
@@ -256,7 +267,6 @@ export default function LandingPage({ navigate }) {
                 </div>
                 <h3 className="font-heading text-xl mb-2">{s.title}</h3>
                 <p className="text-[#8a8078] leading-relaxed text-sm">{s.desc}</p>
-                {/* animated connector line */}
                 {i < 2 && (
                   <div
                     className={`step-line stagger-${i + 2} hidden md:block absolute top-10 left-full w-full`}
@@ -336,17 +346,49 @@ export default function LandingPage({ navigate }) {
           <div className="reveal-scale">
             <div className="animated-border animate-pulse-glow">
               <div className="animated-border-inner text-center">
+
+                {/* Launch badge */}
+                <div className="inline-flex items-center gap-2 bg-[rgba(232,97,26,0.1)] border border-[rgba(232,97,26,0.25)] rounded-full px-4 py-1.5 mb-6">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e8611a] animate-pulse" />
+                  <span className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#e8611a]">
+                    Launching April 14, 2026
+                  </span>
+                </div>
+
                 <h2 className="font-heading text-4xl md:text-5xl mb-4">Ready to Hit the Road?</h2>
-                <p className="text-[#8a8078] text-lg mb-8">
-                  Join thousands of riders planning their next adventure with Motonomaad
+                <p className="text-[#8a8078] text-lg mb-3">
+                  Join thousands of riders planning their next adventure with Motonomaad.
                 </p>
+                <p className="text-[#5a5048] text-sm mb-8">
+                  Sign up for early access and be among the first to ride the platform.
+                </p>
+
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Btn size="lg" className="btn-glow" onClick={() => navigate('trip-planner')}>
-                    Start Planning <ArrowRight size={16} />
+                  {/* Waitlist is primary CTA here */}
+                  <Btn size="lg" className="btn-glow" onClick={openWaitlist}>
+                    Join the Waitlist <ArrowRight size={16} />
                   </Btn>
                   <Btn size="lg" variant="outline" onClick={() => navigate('mechanics')}>Find Mechanics</Btn>
                   <Btn size="lg" variant="outline" onClick={() => navigate('groups')}>Join Community</Btn>
                 </div>
+
+                {/* Social proof */}
+                <div className="flex items-center justify-center gap-2 mt-8">
+                  <div className="flex">
+                    {['AR', 'MK', 'SR', 'PV'].map((initials, i) => (
+                      <div
+                        key={i}
+                        className="w-7 h-7 rounded-full bg-[#2a2520] border-2 border-[#1a1512] -ml-2 first:ml-0 flex items-center justify-center text-[9px] text-[#8a8078] font-bold"
+                      >
+                        {initials}
+                      </div>
+                    ))}
+                  </div>
+                  <span className="text-sm text-[#5a5048]">
+                    <span className="text-[#e8611a] font-bold">240+ riders</span> already on the waitlist
+                  </span>
+                </div>
+
               </div>
             </div>
           </div>
