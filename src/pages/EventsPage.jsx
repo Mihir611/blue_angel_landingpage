@@ -19,7 +19,8 @@ export function EventsPage({ showToast }) {
             try {
                 setLoading(true);
                 const data = await GetLandingEvents();
-                setEvents(data || []);
+                const list = data?.events ?? data?.data?.events ?? [];
+                setEvents(Array.isArray(list) ? list : []);
                 setError(null);
             } catch (err) {
                 console.error('Failed to fetch events:', err);
@@ -74,7 +75,7 @@ export function EventsPage({ showToast }) {
                 ) : error ? (
                     <EmptyState
                         icon={<Calendar size={48} />}
-                        title="Failed to load events"
+                        title="No Events Found"
                         desc="Please try again later."
                     />
                 ) : filtered.length === 0 ? (

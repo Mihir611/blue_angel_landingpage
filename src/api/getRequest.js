@@ -15,3 +15,13 @@ export const GetLandingEvents = async () => {
     let res = await RequestData(configInterface);
     return res;
 }
+
+export const GetCommunities = async (params = {}) => {
+    const query = new URLSearchParams(params).toString()
+    configInterface.url = import.meta.env.VITE_API_URL
+        + 'api/communities/landing/featuredCommunities'
+        + (query ? `?${query}` : '')
+
+    let res = await RequestData(configInterface);
+    return res;
+}

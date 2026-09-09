@@ -15,15 +15,28 @@ export function useScrollReveal(rootMargin = '0px 0px -60px 0px') {
     if (!el) return
 
     const selector = '.reveal,.reveal-left,.reveal-right,.reveal-scale,.step-line,.stat-pop,.road-path'
-    const targets = el.querySelectorAll(selector)
 
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => e.isIntersecting && e.target.classList.add('visible')),
       { rootMargin, threshold: 0.1 }
     )
 
-    targets.forEach((t) => observer.observe(t))
-    return () => observer.disconnect()
+    const observeTargets = () => {
+      el.querySelectorAll(selector).forEach((t) => {
+        if (!t.classList.contains('visible')) observer.observe(t)
+      })
+    }
+
+    observeTargets() // initial pass
+
+    // watch for new .reveal elements added after async data loads
+    const mutationObserver = new MutationObserver(observeTargets)
+    mutationObserver.observe(el, { childList: true, subtree: true })
+
+    return () => {
+      observer.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [rootMargin])
 
   return ref

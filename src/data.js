@@ -65,6 +65,7 @@ export const TRIP_SUGGESTIONS = {
 
 export const APP_LINKS = [
   { id: 'trip-planner', label: 'Trip Planner' },
+  { id: 'community', label: 'Community' },
   { id: 'mechanics', label: 'Mechanics' },
   { id: 'social', label: 'Social' },
   { id: 'groups', label: 'Groups' },
